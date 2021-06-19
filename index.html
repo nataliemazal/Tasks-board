@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Board</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body onload="loadNotes()">
+    <div class="container-fluid">
+        <h2>My Task Board</h2>
+
+        <div class="formArea">
+            <form action="" onsubmit="saveTask()">
+                <div class="taskInput">
+                    <div>
+                        <label for="task">Task details:</label>
+                    </div>
+                    <div>
+                        <textarea id="task" cols="20" rows="2" required oninput="autoGrowTaskInput(this)"></textarea>
+                    </div>
+                </div>
+                <div class="dateTime">
+                    <div>
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div>
+                        <label for="hour">Hour:</label> <br>
+                        <input type="time" id="hour">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="submit" id="btnSave">Save</button>
+                    <button type="reset" id="btnReset">Reset</button>
+                </div>
+
+
+
+            </form>
+            <h1>total pending tasks: <span id="totalTasks"></span></h1>
+        </div>
+
+
+        <div id="notesContainer">
+        </div>
+    </div>
+</body>
+
+</html>
